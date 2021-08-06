@@ -67,8 +67,14 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 | *Azure Service Bus*   | Basic | <$0.01 |
 | *Azure App Service Plan* | Basic | <$0.01 |
 | *Azure App Service* | Free | $0 |
+| *Azure Sendgrid* | Free | $0 |
+| *Azure Function* | Consumption | <$0.01 |
 
 Costs based on the last microsoft invoice. Billing period: June 24, 2021–July 23, 2021.
 
 ## Architecture Explanation
-Migrating the WebApp and the backend Function is easy and needs almost no changes. After that we have an auto-scaling and load balancing for both of them. The Service Bus provides the reliable way to send messages between frontend and backend and provides the lose coopling between them. Using free and basic tiers gives all advantages of cloud architechture for reasonable cost. Alltogether the migrated solution is reliable, needs no system administrator attention and cost-effective. 
+Migrating the WebApp and the backend Function is easy and needs almost no changes. After that we have an auto-scaling and load balancing for both of them.  The Service Bus provides the reliable way to send messages between frontend and backend and provides the lose coopling between them. The frontend Web App, the backend Azure Function and the Service Bus can be independently scaled up for better performance and higher traffic and also scaled down if there is no need for resources any more.
+
+ Using free and basic tiers by developing the solution gives all advantages of cloud architechture for reasonable cost. 
+
+ Alltogether the migrated solution is reliable, needs no system administrator attention and cost-effective. 
