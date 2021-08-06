@@ -63,9 +63,12 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| *Azure Postgres Database* |  Basic   | $16.69 |
+| *Azure Service Bus*   | Basic | <$0.01 |
+| *Azure App Service Plan* | Basic | <$0.01 |
+| *Azure App Service* | Free | $0 |
+
+Costs based on the last microsoft invoice. Billing period: June 24, 2021–July 23, 2021.
 
 ## Architecture Explanation
-This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+Migrating the WebApp and the backend Function is easy and needs almost no changes. After that we have an auto-scaling and load balancing for both of them. The Service Bus provides the reliable way to send messages between frontend and backend and provides the lose coopling between them. Using free and basic tiers gives all advantages of cloud architechture for reasonable cost. Alltogether the migrated solution is reliable, needs no system administrator attention and cost-effective. 
